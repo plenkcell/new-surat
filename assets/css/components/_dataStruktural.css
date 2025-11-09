@@ -1,0 +1,214 @@
+/* File: assets/css/components/_dataStruktural.css */
+/* Gaya khusus untuk halaman Data Struktural */
+
+/* Wrapper & Kontrol */
+.table-wrapper-struktural {
+    background-color: var(--bg-content);
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid var(--border-color);
+}
+.table-controls-struktural {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+.entries-control-struktural {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+#entries-select-struktural {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    cursor: pointer;
+}
+.search-wrapper-struktural {
+    position: relative;
+    flex-grow: 1;
+    max-width: 400px;
+}
+.search-wrapper-struktural i {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+#search-input-struktural {
+    width: 100%;
+    padding: 12px 20px 12px 50px;
+    border-radius: 25px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+}
+#search-input-struktural:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.15);
+}
+
+/* Tabel */
+.table-responsive-struktural {
+    width: 100%;
+    overflow-x: auto;
+}
+.data-table-struktural {
+    width: 100%;
+    border-collapse: collapse;
+}
+.data-table-struktural th,
+.data-table-struktural td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+.data-table-struktural th {
+    background-color: var(--bg-main);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+.data-table-struktural tbody tr:hover {
+    background-color: rgba(var(--primary-rgb), 0.05);
+}
+.aksi-struktural {
+    display: flex;
+    gap: 8px;
+}
+
+/* Paginasi */
+.pagination-controls-struktural {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+}
+.pagination-buttons-struktural {
+    display: flex;
+    gap: 6px;
+}
+.pagination-buttons-struktural button {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    min-width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.pagination-buttons-struktural button:hover {
+    background-color: var(--border-color);
+}
+.pagination-buttons-struktural button.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+/* Modal */
+.modal-container-struktural {
+    display: none;
+    position: fixed;
+    z-index: 1002;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-overlay-bg);
+    align-items: center;
+    justify-content: center;
+}
+.modal-container-struktural.active {
+    display: flex;
+}
+.modal-content-struktural {
+    background-color: var(--bg-content);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+}
+.modal-header-struktural {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-close-struktural {
+    cursor: pointer;
+    font-size: 24px;
+}
+.modal-body-struktural {
+    padding: 20px;
+}
+.form-group-struktural {
+    margin-bottom: 15px;
+}
+.form-group-struktural label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-input-struktural {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+.form-actions-struktural {
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.btn-secondary-struktural, .btn-primary-struktural {
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+.btn-secondary-struktural {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+}
+.btn-primary-struktural {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .data-table-struktural thead {
+        display: none;
+    }
+    .data-table-struktural, .data-table-struktural tbody, .data-table-struktural tr, .data-table-struktural td {
+        display: block;
+        width: 100%;
+    }
+    .data-table-struktural tr {
+        margin-bottom: 15px;
+    }
+    .data-table-struktural td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    .data-table-struktural td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        text-align: left;
+        font-weight: 600;
+    }
+}

@@ -1,0 +1,88 @@
+/* Gaya untuk Modal Ubah Surat Internal dengan Sufiks -usi */
+.modal-container-usi {
+    display: none;
+    position: fixed;
+    z-index: 1002;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-overlay-bg);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+    animation: fadeInModalStatus 0.3s;
+    padding: 2vh;
+    box-sizing: border-box;
+}
+.modal-content-usi {
+    background-color: var(--bg-content);
+    padding: 0;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    width: 90vw;
+    height: 90vh;
+    max-width: 900px;
+    animation: slideInModalStatus 0.4s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+/* Gaya khusus untuk modal konfirmasi yang lebih kecil dan modern */
+.modal-content-usi.confirm {
+    width: 90%;
+    max-width: 450px;
+    height: auto;
+    text-align: center;
+}
+.modal-content-usi.confirm .modal-body-usi {
+    padding: 32px;
+}
+.modal-content-usi.confirm .modal-icon-ksi.warning {
+    background-color: #FFF3E0; /* Oranye muda */
+    color: #FF9800; /* Oranye */
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+body.dark-mode .modal-content-usi.confirm .modal-icon-ksi.warning {
+    background-color: #4a3a2b;
+    color: #ffab40;
+}
+
+/* MODIFIKASI: Menambahkan gaya modern untuk tombol Batal */
+.modal-actions-dsi .btn-secondary-dsi {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.modal-actions-dsi .btn-secondary-dsi:hover {
+    background-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+
+.modal-header-usi {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+.modal-header-usi h3 { margin: 0; font-size: 1.1rem; }
+.modal-close-usi { font-size: 28px; font-weight: bold; cursor: pointer; color: var(--text-secondary); }
+.modal-body-usi {
+    padding: 24px;
+    overflow-y: auto;
+}

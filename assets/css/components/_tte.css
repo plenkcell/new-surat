@@ -1,0 +1,146 @@
+/* File: assets/css/components/_tte.css (Versi Final) */
+.tte-container-full {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 20px;
+    padding: 20px;
+    height: calc(100vh - 120px);
+}
+
+.tte-controls-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.tte-card {
+    width: 100%;
+    background-color: var(--bg-content);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.tte-card__icon { 
+    font-size: 2.5rem; 
+    color: var(--primary-color); 
+    margin-bottom: 10px; 
+}
+.tte-card h2 { 
+    margin-bottom: 8px; 
+    font-size: 1.2rem; 
+}
+.tte-card p { 
+    margin-bottom: 20px; 
+    font-size: 0.9rem; 
+    color: var(--text-secondary); 
+}
+
+.signature-pad {
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    cursor: crosshair;
+    width: 100%;
+    height: 150px;
+    background-color: var(--bg-main);
+}
+
+.signature-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.signature-controls .btn-secondary-dsi { 
+    cursor: pointer; 
+}
+
+.tte-preview-panel {
+    background: var(--bg-main);
+    border-radius: 12px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.pdf-container {
+    position: relative;
+    width: fit-content;
+    max-width: 100%; /* Agar tidak keluar dari panel di mobile */
+    margin: 0 auto;
+}
+
+#pdf-preview-container canvas {
+    display: block;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.signature-stamp {
+    position: absolute;
+    border: 2px dashed var(--primary-color);
+    user-select: none;
+    z-index: 10;
+    cursor: move;
+}
+.signature-stamp img {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.delete-stamp-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    background-color: #D32F2F;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 12;
+}
+
+.resizer {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color);
+    border: 1px solid var(--bg-content);
+    border-radius: 50%;
+    z-index: 11;
+}
+.resizer.top-left { top: -5px; left: -5px; cursor: nwse-resize; }
+.resizer.top-right { top: -5px; right: -5px; cursor: nesw-resize; }
+.resizer.bottom-left { bottom: -5px; left: -5px; cursor: nesw-resize; }
+.resizer.bottom-right { bottom: -5px; right: -5px; cursor: nwse-resize; }
+
+@media (max-width: 992px) {
+    .tte-container-full {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+}
+
+/* ### KODE BARU: Perbaikan Responsif untuk Preview PDF di Smartphone ### */
+@media (max-width: 768px) {
+    .tte-preview-panel {
+        padding: 10px; /* Kurangi padding di layar kecil */
+    }
+
+    #pdf-preview-container canvas {
+        max-width: 100%; /* Pastikan canvas tidak lebih lebar dari containernya */
+        height: auto; /* Jaga rasio aspek gambar */
+    }
+}

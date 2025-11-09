@@ -1,0 +1,18 @@
+{
+    "require": {
+        "phpmailer/phpmailer": "^6.9",
+        "tinymce/tinymce": "^7.6",
+        "icewind/smb": "^3.7",
+        "guzzlehttp/guzzle": "^7.9",
+        "mtdowling/cron-expression": "^1.2",
+        "dragonmantank/cron-expression": "^2.3",
+        "symfony/console": "^5.4",
+        "firebase/php-jwt": "6.0",
+        "phpoffice/phpspreadsheet": "^1.12",
+        "tecnickcom/tcpdf": "^6.8",
+        "vlucas/phpdotenv": "5.6",
+        "setasign/fpdi": "^2.6",
+        "cboden/ratchet": "^0.4.4"
+    }
+	
+}

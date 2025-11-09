@@ -1,0 +1,255 @@
+/* Semua gaya untuk tabel disposisi dan kontrolnya */
+.table-controls-dispo1 { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+    margin-bottom: 15px; 
+    font-size: 0.9rem; 
+}
+.table-controls-left-dispo2 { 
+    display: flex; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+}
+.entries-control-dispo1, .search-control-dispo1, .filter-control-dispo2 { 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+}
+#entries-select-dispo1, #search-input-dispo1, #filter-select-dispo2 { 
+    padding: 8px 12px; 
+    border-radius: 6px; 
+    border: 1px solid var(--border-color); 
+    background-color: var(--bg-main); 
+    color: var(--text-primary); 
+}
+#search-input-dispo1 { 
+    min-width: 250px; 
+}
+#entries-select-dispo1:focus, #search-input-dispo1:focus, #filter-select-dispo2:focus { 
+    outline: none; 
+    border-color: var(--primary-color); 
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.2); 
+}
+.btn-reset-dispo3 { 
+    background-color: #D32F2F; 
+    color: white; 
+    border: none; 
+    padding: 8px 16px; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 0.9rem; 
+    font-weight: 500; 
+    transition: background-color 0.2s ease; 
+}
+.btn-reset-dispo3:hover { 
+    background-color: #C62828; 
+}
+.table-responsive { 
+    width: 100%; 
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch; 
+}
+.disposisi-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 10px; 
+    font-size: 0.9rem; 
+}
+.disposisi-table thead { 
+    background-color: var(--primary-light); 
+    color: var(--primary-dark); 
+}
+body.dark-mode .disposisi-table thead { 
+    background-color: rgba(72, 201, 176, 0.1); 
+    color: var(--primary-color); 
+}
+.disposisi-table th, .disposisi-table td { 
+    padding: 12px 15px; 
+    text-align: left; 
+    border-bottom: 1px solid var(--border-color); 
+    vertical-align: middle; 
+}
+.disposisi-table tbody tr:hover { 
+    background-color: var(--primary-light); 
+}
+body.dark-mode .disposisi-table tbody tr:hover { 
+    background-color: rgba(45, 55, 72, 0.5); 
+}
+.text-primary-dispo1 { 
+    color: var(--text-primary); 
+    font-weight: 500; 
+}
+.text-secondary-dispo1 { 
+    color: var(--text-secondary); 
+    font-size: 0.85em; 
+}
+.btn-lihat-file-dispo1 { 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 5px; 
+    background-color: transparent; 
+    border: none; 
+    color: var(--primary-color); 
+    font-weight: 500; 
+    cursor: pointer; 
+    padding: 0; 
+    font-family: 'Poppins', sans-serif; 
+    font-size: 0.9rem; 
+}
+.btn-lihat-file-dispo1:hover { 
+    color: var(--primary-dark); 
+}
+.btn-lihat-file-dispo1 i { 
+    font-size: 1.2em; 
+}
+.btn-lihat-status-dispo1 { 
+    background-color: var(--bg-content); 
+    border: 1px solid var(--border-color); 
+    color: var(--text-secondary); 
+    font-weight: 500; 
+    padding: 6px 12px; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    transition: all 0.2s ease; 
+}
+.btn-lihat-status-dispo1:hover { 
+    background-color: var(--primary-light); 
+    color: var(--primary-dark); 
+    border-color: var(--primary-color); 
+}
+.action-buttons-group-dispo1 { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 8px; 
+    align-items: flex-start; 
+}
+.action-buttons-group-dispo1 button { 
+    cursor: pointer; 
+    border: none; 
+    padding: 6px 12px; 
+    border-radius: 6px; 
+    font-weight: 600; 
+    font-size: 0.8rem; 
+    color: #fff; 
+    transition: opacity 0.2s ease; 
+}
+.action-buttons-group-dispo1 button:hover { 
+    opacity: 0.85; 
+}
+.btn-jawab-dispo1 { 
+    background-color: #4CAF50; 
+}
+.btn-jawab-lagi-dispo1 { 
+    background-color: #FF9800; 
+}
+.btn-baca-dispo1 { 
+    background-color: #2196F3; 
+}
+.pagination-controls-dispo1 { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    gap: 15px; 
+    margin-top: 20px; 
+    font-size: 0.9rem; 
+    color: var(--text-secondary); 
+}
+.pagination-buttons-dispo1 button { 
+    background-color: var(--bg-content); 
+    border: 1px solid var(--border-color); 
+    color: var(--text-secondary); 
+    padding: 8px 12px; 
+    margin: 0 2px; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    transition: all 0.2s ease; 
+}
+.pagination-buttons-dispo1 button:hover { 
+    background-color: var(--primary-light); 
+    color: var(--primary-dark); 
+}
+.pagination-buttons-dispo1 button:disabled { 
+    opacity: 0.5; 
+    cursor: not-allowed; 
+}
+.pagination-buttons-dispo1 button.active { 
+    background-color: var(--primary-color); 
+    color: #fff; 
+    border-color: var(--primary-color); 
+}
+.skeleton-box {
+    width: 100%;
+    height: 1.2em;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+.skeleton-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+body.dark-mode .skeleton-box {
+    background-color: #4A5568;
+}
+body.dark-mode .skeleton-box::before {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+/* KODE BARU: Menyesuaikan tampilan tombol di grup aksi disposisi */
+.action-buttons-group-dispo1 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.action-buttons-group-dispo1 button {
+    width: 100%; /* Membuat lebar tombol sama */
+    text-align: center;
+    justify-content: center;
+}
+
+.btn-baca-dispo1 {
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    /* PERUBAHAN: Warna teks menjadi putih agar kontras */
+    color: #FFFFFF;
+    /* PERUBAHAN: Warna latar belakang sesuai permintaan */
+    background-color: #0B8778;
+    /* PERUBAHAN: Warna border disamakan agar solid */
+    border: 1px solid #0B8778;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+}
+
+.btn-baca-dispo1:hover {
+    /* PERUBAHAN: Efek hover menjadi sedikit lebih gelap */
+    background-color: #096e62;
+    border-color: #096e62;
+}

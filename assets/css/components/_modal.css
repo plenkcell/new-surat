@@ -1,0 +1,556 @@
+/* Semua gaya untuk modal status dan PDF */
+/* z-index dinaikkan menjadi 1002 agar tampil di atas modal jawab */
+.modal-container-status, .modal-container-pdf {
+    display: none;
+    position: fixed;
+    z-index: 1002;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--modal-overlay-bg);
+    backdrop-filter: blur(5px);
+    animation: fadeInModalStatus 0.3s;
+}
+@keyframes fadeInModalStatus { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeInModalPdf { from { opacity: 0; } to { opacity: 1; } }
+
+.modal-content-status {
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 15% auto;
+    padding: 0;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: slideInModalStatus 0.4s;
+}
+body.dark-mode .modal-content-status {
+    background-color: rgba(45, 55, 72, 0.6);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+@keyframes slideInModalStatus { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.modal-header-status { 
+    padding: 16px 24px; 
+    border-bottom: 1px solid var(--border-color); 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+.modal-header-status h3 { 
+    margin: 0; 
+    font-size: 1.2rem; 
+    color: var(--text-primary); 
+}
+.modal-close-status { 
+    color: var(--text-secondary); 
+    font-size: 28px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: color 0.2s ease; 
+}
+.modal-close-status:hover, .modal-close-status:focus { 
+    color: var(--text-primary); 
+    text-decoration: none; 
+}
+.modal-body-status { 
+    padding: 24px; 
+}
+.status-list-dispo1 { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 12px; 
+}
+.status-item-dispo1 { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    font-size: 0.95rem; 
+}
+.unit-name-dispo1 { 
+    color: var(--text-secondary); 
+}
+.status-belum-text-dispo1 { 
+    color: #C62828; 
+    font-weight: 600; 
+}
+.status-sudah-text-dispo1 { 
+    color: #00796B; 
+    font-weight: 600; 
+}
+body.dark-mode .status-belum-text-dispo1 { 
+    color: #EF9A9A; 
+}
+body.dark-mode .status-sudah-text-dispo1 { 
+    color: #48C9B0; 
+}
+
+.modal-content-pdf {
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 2.5vh auto;
+    padding: 0;
+    width: 90vw;
+    max-width: 1100px;
+    height: 95vh;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: slideInModalPdf 0.4s;
+    display: flex;
+    flex-direction: column;
+}
+body.dark-mode .modal-content-pdf {
+    background-color: rgba(45, 55, 72, 0.6);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+@keyframes slideInModalPdf { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.modal-header-pdf { 
+    padding: 12px 24px; 
+    border-bottom: 1px solid var(--border-color); 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    flex-shrink: 0; 
+}
+.modal-header-pdf h3 { 
+    margin: 0; 
+    font-size: 1rem; 
+    color: var(--text-primary); 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    max-width: calc(100% - 100px); 
+}
+.modal-header-actions-pdf { 
+    display: flex; 
+    align-items: center; 
+    gap: 16px; 
+}
+.modal-action-btn-pdf { 
+    background: none; 
+    border: none; 
+    font-size: 22px; 
+    color: var(--text-secondary); 
+    cursor: pointer; 
+    transition: color 0.2s ease; 
+    padding: 5px; 
+    line-height: 1; 
+}
+.modal-action-btn-pdf:hover { 
+    color: var(--primary-color); 
+}
+.modal-close-pdf { 
+    color: var(--text-secondary); 
+    font-size: 28px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: color 0.2s ease; 
+}
+.modal-close-pdf:hover { 
+    color: var(--text-primary); 
+}
+.modal-body-pdf { 
+    flex-grow: 1; 
+    overflow-y: auto; 
+    text-align: center; 
+    background-color: #525659; 
+    padding: 10px; 
+}
+.pdf-viewer-container { 
+    position: relative; 
+    display: inline-block; 
+}
+#pdf-canvas { 
+    max-width: 100%; 
+    height: auto; 
+}
+.pdf-loader { 
+    color: white; 
+    font-size: 1.2rem; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 10px; 
+    height: 100%; 
+}
+.pdf-loader i { 
+    font-size: 2rem; 
+}
+.pdf-navigation { 
+    padding: 10px 24px; 
+    border-top: 1px solid var(--border-color); 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: var(--bg-content); 
+    border-bottom-left-radius: 12px; 
+    border-bottom-right-radius: 12px; 
+    flex-shrink: 0; 
+}
+.pdf-navigation button { 
+    background-color: var(--primary-color); 
+    color: white; 
+    border: none; 
+    padding: 8px 16px; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 5px; 
+    transition: background-color 0.2s ease; 
+}
+.pdf-navigation button:hover { 
+    background-color: var(--primary-dark); 
+}
+.pdf-navigation button:disabled { 
+    background-color: var(--text-secondary); 
+    cursor: not-allowed; 
+    opacity: 0.7; 
+}
+#pdf-page-indicator { 
+    font-weight: 600; 
+    color: var(--text-primary); 
+}
+.modal-container-jwb {
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-overlay-bg);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2vh;
+    box-sizing: border-box;
+}
+.modal-content-jwb {
+    background-color: var(--bg-content);
+    width: 80vw;
+    height: 85vh;
+    max-width: 1200px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    animation: slideInModalStatus 0.4s;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.modal-header-jwb {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+.modal-header-jwb h3 { margin: 0; font-size: 1.2rem; }
+.modal-close-jwb { font-size: 28px; font-weight: bold; cursor: pointer; color: var(--text-secondary); }
+.modal-close-jwb:hover { color: var(--text-primary); }
+.modal-body-jwb { 
+    padding: 24px; 
+    overflow-y: auto;
+    flex-grow: 1;
+}
+#loader-jwb { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 40px; 
+    color: var(--primary-color); 
+}
+.header-surat-jwb {
+    background-color: var(--bg-main);
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border-color);
+    position: relative;
+}
+.header-surat-jwb h4 { margin: 0 0 8px 0; color: var(--primary-dark); padding-right: 80px; }
+.header-surat-jwb p { margin: 4px 0; font-size: 0.9rem; color: var(--text-secondary); }
+.header-surat-jwb .meta-jwb { font-size: 0.8rem; }
+.view-pdf-button-jwb {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+.view-pdf-button-jwb:hover { color: var(--primary-color); }
+.view-pdf-button-jwb i { font-size: 36px; }
+.view-pdf-button-jwb span { font-size: 0.75rem; font-weight: 500; margin-top: 4px; }
+.panel-jwb {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+.panel-heading-jwb {
+    padding: 12px 16px;
+    background-color: var(--bg-main);
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color);
+}
+.panel-body-jwb { 
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.history-item-jwb {
+    width: fit-content;
+    max-width: 75%;
+}
+.history-item-jwb-left {
+    align-self: flex-start;
+}
+.history-item-jwb-right {
+    align-self: flex-end;
+}
+.history-header-jwb { 
+    color: var(--text-primary); 
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 4px; 
+}
+.history-header-jwb strong { color: var(--primary-dark); }
+body.dark-mode .history-header-jwb strong { color: var(--primary-color); }
+.history-body-jwb { 
+    padding: 10px 14px;
+    border-radius: 16px;
+    word-wrap: break-word; 
+    font-size: 0.95rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+.history-item-jwb-left .history-body-jwb {
+    background-color: var(--bg-main);
+    border-bottom-left-radius: 4px;
+}
+.history-item-jwb-right .history-body-jwb {
+    background-color: var(--primary-light);
+    border-bottom-right-radius: 4px;
+}
+.history-body-jwb.revised { background-color: var(--error-bg); color: var(--error-text); }
+body.dark-mode .history-item-jwb-left .history-body-jwb {
+    background-color: var(--bg-sidebar);
+}
+body.dark-mode .history-item-jwb-right .history-body-jwb {
+    background-color: #005C4B;
+}
+body.dark-mode .history-body-jwb.revised { background-color: var(--error-bg); }
+.history-time-jwb { 
+    text-align: right;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: 6px;
+}
+.history-item-jwb-right .history-time-jwb {
+    text-align: left;
+}
+.form-jwb .form-group-jwb { margin-bottom: 20px; }
+.form-jwb label {
+    display: block;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+.form-jwb textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    resize: vertical;
+    min-height: 120px;
+}
+.form-jwb textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.2);
+}
+.input-file-jwb {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.input-file-jwb:hover {
+    border-color: var(--primary-color);
+}
+.input-file-jwb::file-selector-button {
+    margin-right: 12px;
+    border: none;
+    background: var(--primary-color);
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color .2s ease-in-out;
+}
+.input-file-jwb::file-selector-button:hover {
+    background: var(--primary-dark);
+}
+.signature-pad-jwb { border: 1px solid var(--border-color); border-radius: 6px; cursor: crosshair; }
+.error-message-jwb { color:var(--error-text); font-size: 0.8rem; margin-top: 4px; }
+.btn-secondary-jwb {
+    margin-top: 8px;
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-content);
+    color: var(--text-secondary);
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.btn-secondary-jwb:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-dark);
+}
+.signature-feature-jwb {
+    display: none;
+}
+.attachment-jwb {
+    margin-top: 8px;
+}
+.attachment-link-jwb {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(0,0,0,0.05);
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+.attachment-link-jwb:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+.attachment-link-jwb i {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+body.dark-mode .attachment-link-jwb {
+    background-color: rgba(255,255,255,0.05);
+    color: var(--text-primary);
+}
+body.dark-mode .attachment-link-jwb:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+.attachment-modal-jwb {
+    display: none;
+    position: fixed;
+    z-index: 1003; /* Paling atas */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.85);
+    backdrop-filter: blur(8px);
+    animation: fadeInModalStatus 0.3s;
+}
+.attachment-modal-content-jwb {
+    margin: auto;
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 80%;
+    max-height: 80%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#attachment-image-preview-jwb,
+#attachment-video-preview-jwb {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+.attachment-modal-close-jwb {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.attachment-modal-close-jwb:hover,
+.attachment-modal-close-jwb:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+.attachment-modal-caption-jwb {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+@media (max-width: 768px) {
+    .modal-content-jwb {
+        width: 95vw;
+        height: 90vh;
+        max-width: 95vw;
+        margin: 5vh auto;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+    }
+    .modal-body-jwb {
+        padding: 16px;
+    }
+}
+
+/* ### KODE BARU: Penyesuaian Lebar Modal Status untuk Desktop ### */
+@media (min-width: 992px) {
+    .modal-content-status {
+        max-width: 650px; /* Lebar modal */
+        max-height: 90vh; /* Tinggi modal maksimal 90% dari tinggi layar */
+        overflow-y: auto; /* Scroll vertikal jika konten terlalu panjang */
+    }
+}

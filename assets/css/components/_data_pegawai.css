@@ -1,0 +1,271 @@
+/* File: assets/css/components/_data_pegawai.css (Mandiri, Modern & Final) */
+
+/* Gaya dasar untuk wrapper tabel */
+.table-wrapper-pegawai {
+    background-color: var(--bg-content);
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid var(--border-color);
+}
+
+/* === UI KONTROL MODERN (SEARCH & ENTRIES) === */
+.table-controls-pegawai {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+.controls-left-pegawai {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.entries-control-pegawai {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+#entries-select-pegawai {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+/* === UI PENCARIAN MODERN === */
+.search-wrapper-pegawai {
+    position: relative;
+    flex-grow: 1;
+    max-width: 400px;
+}
+.search-wrapper-pegawai i {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+#search-input-pegawai {
+    width: 100%;
+    padding: 12px 20px 12px 50px;
+    border-radius: 25px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+#search-input-pegawai:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.15);
+}
+
+/* Tabel Data */
+.table-responsive-pegawai {
+    width: 100%;
+    overflow-x: auto;
+}
+.data-table-pegawai {
+    width: 100%;
+    border-collapse: collapse;
+}
+.data-table-pegawai th, .data-table-pegawai td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+.data-table-pegawai th {
+    background-color: var(--bg-main);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.data-table-pegawai tbody tr:hover {
+    background-color: var(--bg-main);
+}
+.data-table-pegawai .btn-edit-pegawai {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* --- Perbaikan tata letak pagination agar tombol rapi & sejajar --- */
+.pagination-controls-pegawai {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+    margin-top: 10px;
+}
+
+.pagination-buttons-pegawai {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.pagination-buttons-pegawai button {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    min-width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.pagination-buttons-pegawai button:hover:not(:disabled) {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.pagination-buttons-pegawai button.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+.pagination-buttons-pegawai button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Header Widget */
+.widget-header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* ### KODE BARU & KRUSIAL: Gaya Mandiri untuk Modal pegawai ### */
+.modal-container-pegawai {
+    display: none; /* Sembunyi secara default */
+    position: fixed;
+    z-index: 1002;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: var(--modal-overlay-bg);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+}
+/* Aturan ini akan membuat modal terlihat saat JavaScript menambahkan class 'active' */
+.modal-container-pegawai.active {
+    display: flex;
+    animation: fadeInModal-pegawai 0.3s;
+    opacity: 1;
+}
+@keyframes fadeInModal-pegawai { from { opacity: 0; } to { opacity: 1; } }
+
+.modal-content-pegawai {
+    background-color: var(--bg-content);
+    padding: 0;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    width: 90%;
+    max-width: 500px;
+    animation: slideInModal-pegawai 0.4s;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.modal-container-pegawai:not(.active) .modal-content-pegawai {
+    transform: translateY(-40px);
+    opacity: 0;
+}
+@keyframes slideInModal-pegawai { from { transform: translateY(-30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.modal-header-pegawai, .modal-body-pegawai {
+    padding: 24px;
+}
+.modal-header-pegawai {
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+}
+.modal-header-pegawai h3 { margin: 0; font-size: 1.2rem; }
+.modal-close-pegawai { font-size: 28px; cursor: pointer; }
+.form-group-pegawai { margin-bottom: 20px; }
+.form-group-pegawai label { display: block; margin-bottom: 8px; font-weight: 500; }
+.form-input-pegawai {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+.form-actions-pegawai {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+    padding: 24px;
+    border-top: 1px solid var(--border-color);
+}
+.btn-secondary-pegawai, .btn-primary-pegawai {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+.btn-secondary-pegawai { background-color: var(--bg-main); border: 1px solid var(--border-color); }
+.btn-primary-pegawai { background-color: var(--primary-color); color: white; }
+
+/* PERBAIKAN RESPONSIVE TABEL */
+@media (max-width: 768px) {
+    .data-table-pegawai thead {
+        display: none;
+    }
+    .data-table-pegawai, .data-table-pegawai tbody, .data-table-pegawai tr, .data-table-pegawai td {
+        display: block;
+        width: 100%;
+    }
+    .data-table-pegawai tr {
+        margin-bottom: 15px;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .data-table-pegawai td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .data-table-pegawai tr td:last-child {
+        border-bottom: none;
+    }
+    .data-table-pegawai td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: 600;
+        color: var(--text-primary);
+    }
+}

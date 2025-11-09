@@ -1,0 +1,126 @@
+/* File: assets/css/components/_surat_selesai.css */
+
+/* Mewarisi semua gaya dasar dari Daftar Surat Internal */
+@import url('_daftar_surat_internal.css');
+
+/* =====================================================
+    MODERNISASI TAMPILAN KONTROL TABEL SURAT SELESAI
+===================================================== 
+*/
+
+/* Tata letak utama untuk kontrol */
+#surat-selesai-section .table-controls-dsi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+#surat-selesai-section .controls-left-dsi {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#surat-selesai-section .search-wrapper-dsi {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+}
+
+#surat-selesai-section .search-wrapper-dsi i {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+}
+
+#surat-selesai-section #search-input-ss {
+    width: 100%;
+    padding: 12px 20px 12px 50px;
+    border-radius: 25px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+#surat-selesai-section #search-input-ss:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: var(--bg-content);
+    box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.15);
+}
+
+#surat-selesai-section .entries-control-dsi {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+#surat-selesai-section #entries-select-ss {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-content);
+    color: var(--text-primary);
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A0AEC0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 1em;
+    padding-right: 36px;
+}
+
+#surat-selesai-section .btn-reset-dsi {
+    background-color: var(--bg-main);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    padding: 9px 15px;
+}
+#surat-selesai-section .btn-reset-dsi:hover {
+    background-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+/* ### KODE BARU: Memberi gaya khusus pada tombol "Baca Disposisi" ### */
+#surat-selesai-section .btn-dsi[data-action="baca_disposisi"] {
+    color: #FFFFFF;
+    background-color: #0B8778;
+    border: 1px solid #0B8778;
+}
+
+#surat-selesai-section .btn-dsi[data-action="baca_disposisi"]:hover {
+    background-color: #b8b517;
+    border-color: #b6e72e;
+}
+
+/* ### KODE BARU: Memberi gaya khusus pada tombol "Baca Disposisi" ### */
+#surat-selesai-section .btn-dsi[data-action="lihat_status"] {
+    color: #FFFFFF;
+    background-color: #3c4644;
+    border: 1px solid #43504e;
+}
+
+#surat-selesai-section .btn-dsi[data-action="lihat_status"]:hover {
+    background-color: #247070;
+    border-color: #1c8379;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    #surat-selesai-section .table-controls-dsi {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+}

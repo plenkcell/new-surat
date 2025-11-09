@@ -1,0 +1,67 @@
+/*
+=====================================================
+CSS KHUSUS UNTUK HALAMAN LOGIN
+=====================================================
+*/
+
+/* Variabel Tema (Agar selaras dengan dasbor) */
+:root {
+    /* Light Mode */
+    --primary-color: #009688; --primary-light: #E0F2F1; --primary-dark: #00796B;
+    --bg-main: #F4F7FC; --bg-content: #FFFFFF;
+    --text-primary: #1A202C; --text-secondary: #718096; --border-color: #E8E8E8;
+    --shadow-color: rgba(149, 157, 165, 0.1);
+    --error-bg: #FFEBEE; --error-text: #C62828;
+    --primary-rgb: 0, 150, 136;
+}
+/* Mode Gelap tidak diperlukan untuk login, namun variabel disiapkan jika ingin dikembangkan */
+body.dark-mode {
+    --primary-color: #48C9B0; --primary-light: rgba(72, 201, 176, 0.1); --primary-dark: #48C9B0;
+    --bg-main: #171923; --bg-content: #2D3748;
+    --text-primary: #EDF2F7; --text-secondary: #A0AEC0; --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --error-bg: #4D1C1F; --error-text: #EF9A9A;
+    --primary-rgb: 72, 201, 176;
+}
+
+/* General Setup */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; background-color: var(--bg-main); color: var(--text-primary); transition: background-color 0.3s ease, color 0.3s ease; }
+
+/* Styling Halaman Login */
+.login-body {
+    overflow: hidden;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.shape { position: absolute; border-radius: 50%; opacity: 0.15; background: linear-gradient(45deg, var(--primary-color), var(--primary-dark)); }
+.shape-1 { width: 300px; height: 300px; top: -100px; left: -100px; }
+.shape-2 { width: 250px; height: 250px; bottom: -80px; right: -80px; }
+.login-split-container { display: grid; grid-template-columns: 1fr 1fr; width: 100%; max-width: 1100px; height: 600px; background: var(--bg-content); border-radius: 20px; box-shadow: 0 10px 40px var(--shadow-color); z-index: 1; overflow: hidden; }
+.login-branding { background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: white; display: flex; justify-content: center; align-items: center; padding: 40px; }
+.branding-content { text-align: center; }
+.branding-content i { font-size: 80px; margin-bottom: 20px; }
+.branding-content h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 15px; }
+.branding-content p { font-size: 1rem; line-height: 1.6; }
+.login-form-wrapper { display: flex; justify-content: center; align-items: center; padding: 40px; }
+.login-card { width: 100%; max-width: 380px; text-align: center; }
+.login-logo i { font-size: 50px; color: var(--primary-color); }
+.login-card h2 { font-size: 2rem; font-weight: 600; color: var(--text-primary); margin: 10px 0; }
+.login-subtitle { color: var(--text-secondary); margin-bottom: 30px; }
+.login-error-message { background-color: var(--error-bg); color: var(--error-text); padding: 12px; border-radius: 8px; margin-bottom: 20px; font-size: 14px; font-weight: 500; }
+.login-form .form-group { position: relative; margin-bottom: 25px; }
+.login-form input[type="text"], .login-form input[type="password"] { width: 100%; padding: 15px 15px 15px 50px; border: 1px solid var(--border-color); background-color: var(--bg-main); color: var(--text-primary); border-radius: 8px; font-size: 16px; transition: all 0.3s ease; }
+.login-form input:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.2); }
+.form-icon { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--text-secondary); }
+.password-toggle-btn { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: var(--text-secondary); cursor: pointer; }
+.form-options { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; font-size: 14px; }
+.remember-me { color: var(--text-secondary); cursor: pointer; }
+.login-btn { width: 100%; padding: 15px; border: none; border-radius: 8px; background: var(--primary-color); color: white; font-size: 18px; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease; }
+.login-btn:hover { background-color: var(--primary-dark); }
+@media (max-width: 992px) {
+    .login-split-container { grid-template-columns: 1fr; height: auto; max-width: 500px; margin: 20px; }
+    .login-branding { display: none; }
+}

@@ -1,0 +1,479 @@
+/* File: assets/css/components/_data_pengguna.css (Final, Modern, Responsive, Clean) */
+
+/* === WRAPPER UTAMA === */
+.table-wrapper-pengguna {
+    background-color: var(--bg-content);
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid var(--border-color);
+  }
+  
+  /* === KONTROL ATAS (ENTRIES, FILTER, SEARCH, RESET) === */
+  .table-controls-pengguna {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .controls-left-pengguna {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .entries-control-pengguna,
+  .filter-control-pengguna {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+  
+  #entries-select-pengguna,
+  #filter-status-pengguna {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    cursor: pointer;
+  }
+  
+  #btn-reset-filter-pengguna {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    padding: 8px;
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  #btn-reset-filter-pengguna:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+  }
+  
+  /* === SEARCH BOX === */
+  .search-wrapper-pengguna {
+    position: relative;
+    flex-grow: 1;
+    max-width: 400px;
+    min-width: 250px;
+  }
+  .search-wrapper-pengguna i {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+  }
+  #search-input-pengguna {
+    width: 100%;
+    padding: 12px 20px 12px 50px;
+    border-radius: 25px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+  }
+  #search-input-pengguna:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.15);
+  }
+  
+  /* === TABEL DATA === */
+  .table-responsive-pengguna {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .data-table-pengguna {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+  }
+  
+  .data-table-pengguna th,
+  .data-table-pengguna td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+  }
+  
+  .data-table-pengguna th {
+    background-color: var(--bg-main);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-bottom: 2px solid var(--border-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .data-table-pengguna tbody tr:hover {
+    background-color: rgba(var(--primary-rgb), 0.05);
+  }
+
+  .data-table-pengguna td.aksi-pengguna {
+    overflow: visible;
+  }
+  
+  /* === STATUS BADGE === */
+  .status-pengguna {
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  .status-aktif {
+    background-color: var(--success-light);
+    color: var(--success-dark);
+    border: 1px solid var(--success-dark);
+  }
+  .status-non-aktif {
+    background-color: var(--error-light);
+    color: var(--error-dark);
+    border: 1px solid var(--error-dark);
+  }
+  
+  /* === TOMBOL AKSI & DROPDOWN === */
+  .aksi-pengguna {
+    position: relative;
+    text-align: center;
+  }
+  
+  .btn-aksi-menu {
+    background: none;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: var(--text-secondary);
+    transition: background-color 0.2s;
+  }
+
+  .btn-aksi-menu:hover {
+    background-color: var(--border-color);
+    color: var(--text-primary);
+  }
+
+  .aksi-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 10;
+    min-width: 160px;
+    background-color: var(--bg-content);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+    animation: fadeInDropdown 0.2s ease-out;
+  }
+
+  @keyframes fadeInDropdown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .aksi-dropdown.show {
+    display: block;
+  }
+
+  .aksi-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--text-primary);
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+
+  .aksi-dropdown-item:hover {
+    background-color: var(--bg-main);
+  }
+  
+  .aksi-dropdown-item i {
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+  }
+
+  .aksi-dropdown-item.warning {
+    color: #b87100;
+  }
+  .aksi-dropdown-item.success {
+    color: var(--success-dark);
+  }
+  
+  /* === PAGINATION === */
+  .pagination-controls-pengguna {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 8px 0 8px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+  .pagination-buttons-pengguna {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .pagination-buttons-pengguna button {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    min-width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .pagination-buttons-pengguna button:hover {
+    background-color: var(--border-color);
+    color: var(--text-primary);
+  }
+  .pagination-buttons-pengguna button.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
+  }
+  .pagination-buttons-pengguna button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* === MODAL === */
+  .modal-container-pengguna {
+    display: none;
+    position: fixed;
+    z-index: 1002;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-overlay-bg);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    padding: 20px;
+  }
+  .modal-container-pengguna.active {
+    display: flex;
+    animation: fadeInModal-pengguna 0.3s;
+  }
+  @keyframes fadeInModal-pengguna {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .modal-content-pengguna {
+    background-color: var(--bg-content);
+    padding: 0;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    width: 100%;
+    max-width: 600px;
+    animation: slideInModal-pengguna 0.4s;
+    margin: auto;
+  }
+  @keyframes slideInModal-pengguna {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  .modal-header-pengguna,
+  .modal-body-pengguna,
+  .form-actions-pengguna {
+    padding: 24px;
+  }
+  .modal-header-pengguna {
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+  }
+  .modal-header-pengguna h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  .modal-close-pengguna {
+    font-size: 28px;
+    cursor: pointer;
+  }
+  .form-group-pengguna {
+    margin-bottom: 20px;
+  }
+  .form-group-pengguna label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .form-input-pengguna,
+  .form-group-pengguna select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+  }
+  .form-input-pengguna[readonly] {
+      background-color: var(--border-color);
+      cursor: not-allowed;
+  }
+  .form-actions-pengguna {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
+  }
+  .btn-secondary-pengguna,
+  .btn-primary-pengguna {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-secondary-pengguna {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+  }
+  .btn-primary-pengguna {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  /* === LIVE SEARCH DROPDOWN === */
+  #pegawai-search-results {
+    border: 1px solid var(--border-color);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    max-height: 150px;
+    overflow-y: auto;
+    background-color: var(--bg-content);
+  }
+  #pegawai-search-results .result-item {
+    padding: 10px 16px;
+    cursor: pointer;
+  }
+  #pegawai-search-results .result-item:hover {
+    background-color: var(--primary-light);
+  }
+  #pegawai-search-results .result-item.empty {
+    color: var(--text-secondary);
+    font-style: italic;
+    cursor: default;
+  }
+  
+  /* === RESPONSIVE FIX (MOBILE VIEW) === */
+  @media (max-width: 768px) {
+    .table-responsive-pengguna {
+        overflow-x: hidden;
+    }
+    .data-table-pengguna {
+        min-width: 100%;
+    }
+    .table-controls-pengguna, .controls-left-pengguna {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .search-wrapper-pengguna {
+        max-width: none;
+    }
+
+    .data-table-pengguna thead {
+      display: none;
+    }
+    .data-table-pengguna,
+    .data-table-pengguna tbody,
+    .data-table-pengguna tr,
+    .data-table-pengguna td {
+      display: block;
+      width: 100%;
+    }
+    .data-table-pengguna tr {
+      margin-bottom: 15px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      /* <-- PERBAIKAN: Hapus overflow: hidden agar dropdown terlihat --> */
+      /* overflow: hidden; */ 
+      background-color: var(--bg-main);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    .data-table-pengguna td {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: right; 
+      padding: 12px 15px;
+      position: relative;
+      border: none;
+      border-bottom: 1px solid var(--border-color);
+      white-space: normal;
+      overflow: visible; 
+      text-overflow: clip;
+      min-height: 48px; 
+    }
+    .data-table-pengguna td:last-child {
+        border-bottom: none;
+    }
+    .data-table-pengguna td:before {
+      content: attr(data-label);
+      text-align: left;
+      font-weight: 600;
+      color: var(--text-primary);
+      padding-right: 15px;
+      flex-shrink: 0;
+    }
+    
+    .data-table-pengguna td[data-label="Aksi"] {
+        background-color: rgba(0,0,0,0.02);
+        /* <-- PERBAIKAN: Memastikan sel Aksi bisa menampilkan dropdown --> */
+        overflow: visible;
+    }
+    .aksi-pengguna {
+        justify-content: flex-end;
+    }
+    
+    .pagination-controls-pengguna {
+        flex-direction: column;
+        justify-content: center;
+    }
+  }

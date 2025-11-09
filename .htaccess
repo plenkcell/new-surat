@@ -1,0 +1,40 @@
+# File: e-surat/.htaccess
+# (Versi Dibenahi)
+
+# ----------------------------------------------------------------------
+# OPSI DASAR
+# ----------------------------------------------------------------------
+# Mencegah server menampilkan daftar file dalam direktori
+Options -Indexes
+# Mengaktifkan mesin penulisan ulang URL
+RewriteEngine On
+
+# ----------------------------------------------------------------------
+# TIPE MIME (KOREKSI WAJIB UNTUK .mjs)
+# ----------------------------------------------------------------------
+# Mengatur Content-Type yang benar untuk file JavaScript ES Modules (.mjs)
+# dan file JavaScript biasa (.js)
+<IfModule mod_mime.c>
+    AddType application/javascript .mjs
+    AddType application/javascript .js
+</IfModule>
+
+# ----------------------------------------------------------------------
+# ATURAN KEAMANAN & API
+# ----------------------------------------------------------------------
+# Meneruskan Authorization Header ke PHP untuk JWT
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+# Menangani CORS Preflight (OPTIONS) Request
+RewriteCond %{REQUEST_METHOD} OPTIONS [NC]
+RewriteRule .* - [L]
+
+# ----------------------------------------------------------------------
+# ATURAN FRONT CONTROLLER (PENTING UNTUK SPA)
+# ----------------------------------------------------------------------
+# Jika file atau direktori yang diminta tidak ada...
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# ...arahkan semua permintaan ke index.php
+RewriteRule . index.php [L]

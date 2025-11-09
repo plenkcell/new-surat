@@ -1,0 +1,393 @@
+/* Gaya untuk Halaman Daftar Surat Internal dengan Sufiks -dsi */
+.table-wrapper-dsi {
+    background-color: var(--bg-content);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    border: 1px solid var(--border-color);
+}
+.table-controls-dsi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+.controls-left-dsi {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.entries-control-dsi, .filter-control-dsi {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+#entries-select-dsi, #filter-select-dsi {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+}
+.search-wrapper-dsi {
+    position: relative;
+}
+.search-wrapper-dsi i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+#search-input-dsi {
+    padding: 10px 16px 10px 40px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    width: 250px;
+    transition: all 0.3s ease;
+}
+#search-input-dsi:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.2);
+}
+
+.table-responsive-dsi {
+    width: 100%;
+    overflow-x: auto;
+}
+.surat-internal-table-dsi {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+.surat-internal-table-dsi thead {
+    border-bottom: 2px solid var(--border-color);
+}
+.surat-internal-table-dsi th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+.surat-internal-table-dsi tbody tr {
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s ease;
+}
+.surat-internal-table-dsi tbody tr:last-child { border-bottom: none; }
+.surat-internal-table-dsi tbody tr:hover { background-color: var(--bg-main); }
+.surat-internal-table-dsi td {
+    padding: 16px;
+    vertical-align: top;
+}
+.no-surat-detail-dsi, .perihal-detail-dsi, .petugas-detail-dsi, .verifikasi-detail-dsi, .catatan-detail-dsi {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 4px;
+    white-space: normal;
+}
+.file-link-dsi {
+    background-color: #B4009E;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+.action-buttons-dsi {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+}
+.btn-dsi {
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.btn-info-dsi { background-color: #2196F3; }
+.btn-warning-dsi { background-color: #FF9800; }
+.btn-danger-dsi { background-color: #D32F2F; }
+.btn-success-dsi { background-color: #4CAF50; }
+/* ... (Gaya .btn-dsi lainnya) ... */
+.btn-danger-dsi { background-color: #D32F2F; }
+.btn-success-dsi { background-color: #4CAF50; }
+
+/* v KODE BARU UNTUK TOMBOL PDF v */
+.btn-pdf-dsi {
+    background-color: #C62828; /* Warna merah yang khas untuk PDF */
+    color: white;
+    padding: 4px 8px; /* Sedikit lebih kecil agar pas */
+    font-size: 0.75rem;
+}
+.btn-pdf-dsi:hover {
+    background-color: #B71C1C;
+}
+/* ^ AKHIR DARI KODE BARU ^ */
+
+/* GAYA BARU UNTUK TOMBOL RESET */
+.btn-reset-dsi {
+    background-color: #6c757d;
+    color: white;
+}
+.btn-reset-dsi:hover {
+    background-color: #5a6268;
+}
+
+.btn-dsi[disabled] { opacity: 0.6; cursor: not-allowed; }
+
+.blink-dsi {
+    animation: blink-animation-dsi 1.5s infinite;
+}
+@keyframes blink-animation-dsi {
+    0% { box-shadow: 0 0 0 0 rgba(33, 150, 243, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(33, 150, 243, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(33, 150, 243, 0); }
+}
+
+.pagination-controls-dsi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+.pagination-buttons-dsi button {
+    background-color: var(--bg-content);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 8px 12px;
+    margin: 0 2px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.pagination-buttons-dsi button:hover { background-color: var(--primary-light); }
+.pagination-buttons-dsi button.active {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+.pagination-buttons-dsi button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+@media (min-width: 992px) {
+    #verif-modal-dsi .modal-content-dsi {
+        max-width: 800px; /* Atur lebar maksimal baru untuk desktop */
+    }
+}
+
+@media (max-width: 992px) {
+    .surat-internal-table-dsi thead {
+        display: none;
+    }
+    .surat-internal-table-dsi tr {
+        display: block;
+        margin-bottom: 16px;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px var(--shadow-color);
+    }
+    .surat-internal-table-dsi td {
+        display: block;
+        width: 100%;
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .surat-internal-table-dsi td:last-child {
+        border-bottom: 0;
+    }
+    .surat-internal-table-dsi td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 16px;
+        width: calc(50% - 32px);
+        text-align: left;
+        font-weight: 600;
+        color: var(--text-primary);
+        text-transform: uppercase;
+        font-size: 0.8rem;
+    }
+    .controls-left-dsi, .search-wrapper-dsi {
+        width: 100%;
+    }
+    #search-input-dsi { width: 100%; }
+}
+
+.modal-container-dsi {
+    display: none;
+    position: fixed;
+    z-index: 1002;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-overlay-bg);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInModalStatus 0.3s;
+}
+.modal-content-dsi {
+    background-color: var(--bg-content);
+    padding: 0;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    width: 90%;
+    max-width: 500px;
+    animation: slideInModalStatus 0.4s;
+    overflow: hidden;
+}
+.modal-header-dsi {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-header-dsi h3 { margin: 0; font-size: 1.1rem; }
+.modal-close-dsi { font-size: 28px; font-weight: bold; cursor: pointer; color: var(--text-secondary); }
+.modal-body-dsi {
+    padding: 24px;
+}
+.form-group-dsi label {
+    display: block;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+.form-group-dsi textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    resize: vertical;
+    min-height: 120px;
+    margin-bottom: 16px;
+}
+.form-group-dsi textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.2);
+}
+.modal-actions-dsi {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}
+.modal-actions-dsi .btn-secondary-dsi {
+    background-color: var(--bg-main);
+    border-color: var(--border-color);
+    color: var(--text-secondary);
+}
+.modal-actions-dsi .btn-secondary-dsi:hover {
+    background-color: var(--border-color);
+    color: var(--text-primary);
+}
+.modal-container-usi {
+    display: none;
+    position: fixed;
+    z-index: 1002;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-overlay-bg);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInModalStatus 0.3s;
+}
+.modal-content-usi {
+    background-color: var(--bg-content);
+    padding: 0;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    width: 90%;
+    max-width: 900px;
+    animation: slideInModalStatus 0.4s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.modal-header-usi {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-header-usi h3 { margin: 0; font-size: 1.1rem; }
+.modal-close-usi { font-size: 28px; font-weight: bold; cursor: pointer; color: var(--text-secondary); }
+.modal-body-usi {
+    padding: 24px;
+    overflow-y: auto;
+    max-height: 80vh;
+}
+/* KODE BARU UNTUK FORM DI DALAM MODAL */
+.form-input-dsi, .form-static-text-dsi {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-static-text-dsi {
+    background-color: var(--bg-content);
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+}
+/* ... (kode yang sudah ada di file ini) ... */
+
+/* ### KODE BARU: Untuk menata tombol di header widget ### */
+.widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.widget-header-actions {
+    display: flex;
+    gap: 10px;
+}

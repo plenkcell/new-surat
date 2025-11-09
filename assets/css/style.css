@@ -1,0 +1,35 @@
+/* =====================================================
+   FILE UTAMA STYLE.CSS
+   File ini hanya bertugas untuk mengimpor semua 
+   komponen CSS lainnya. Jangan tambahkan gaya
+   langsung di sini.
+===================================================== */
+
+@import url('components/_variables.css');
+@import url('components/_base.css');
+@import url('components/_sidebar.css');
+@import url('components/_header.css');
+@import url('components/_main-content.css');
+@import url('components/_table.css');
+@import url('components/_modal.css');
+@import url('components/_command-palette.css');
+@import url('components/_profile.css');
+@import url('components/_responsive.css');
+@import url('components/_artikel.css');
+@import url('components/_artikel.css');
+@import url('components/_kirim_surat.css');
+@import url('components/_responsive.css');
+@import url('components/_daftar_surat_internal.css');
+@import url('components/_ubah_surat_internal.css');
+@import url('components/_surat_selesai.css');
+@import url('components/_surat_masuk.css');
+@import url('components/_arsip_surat.css');
+@import url('components/_tte.css');
+@import url('components/_agenda.css');
+@import url('components/_data_bagian.css');
+@import url('components/_data_pegawai.css');
+@import url('components/_data_pengguna.css');
+@import url('components/_settingAplikasi.css');
+@import url('components/_dataStruktural.css');
+@import url('components/_suratMasukAdmin.css');
+@import url('components/_suratMasukAdminSelesai.css');

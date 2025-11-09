@@ -1,0 +1,254 @@
+/* Gaya untuk Halaman Kirim Surat Internal dengan Sufiks Unik -ksi */
+.form-grid-ksi {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+.form-group-ksi {
+    margin-bottom: 20px;
+}
+.form-group-ksi label {
+    display: block;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+.form-group-ksi input[type="text"],
+.form-group-ksi select,
+.form-group-ksi textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+.form-group-ksi input:focus,
+.form-group-ksi select:focus,
+.form-group-ksi textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.2);
+}
+.form-group-ksi textarea {
+    resize: vertical;
+    min-height: 121px;
+}
+
+/* KODE BARU: Gaya untuk Wrapper Input Tanggal yang Disederhanakan */
+.date-input-wrapper-ksi {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.native-date-input-ksi {
+    position: relative;
+    width: 100%;
+    height: 50px; /* Samakan tinggi dengan input lain */
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    color: transparent; /* Sembunyikan teks tanggal asli (yyyy-mm-dd) */
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+.native-date-input-ksi:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.2);
+}
+.date-display-ksi {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Agar klik bisa tembus ke input di bawahnya */
+    color: var(--text-primary);
+    font-weight: 500;
+    background: var(--bg-main); /* Samakan background agar menutupi teks asli */
+    padding-right: 10px;
+}
+.date-input-wrapper-ksi i {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+}
+
+.input-file-ksi {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+.input-file-ksi::file-selector-button {
+    margin-right: 12px;
+    border: none;
+    background: var(--primary-color);
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+}
+.form-actions-ksi {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 16px;
+    margin-top: 10px;
+}
+
+/* ... ======================================== ... */
+
+.input-file-ksi {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+.input-file-ksi::file-selector-button {
+    margin-right: 12px;
+    border: none;
+    background: var(--primary-color);
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+}
+.form-actions-ksi {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.input-file-ksi {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+.input-file-ksi::file-selector-button {
+    margin-right: 12px;
+    border: none;
+    background: var(--primary-color);
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+}
+.form-actions-ksi {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 16px;
+    margin-top: 10px;
+}
+
+/* KODE BARU: Gaya untuk animasi loading pada tombol */
+.btn-primary {
+    position: relative; /* Diperlukan untuk spinner */
+    overflow: hidden;
+    min-height: 48px; /* Jaga tinggi tombol saat loading */
+}
+.btn-primary .btn-spinner-ksi {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    animation: spin-ksi 1s linear infinite;
+}
+.btn-primary.loading .btn-text-ksi {
+    visibility: hidden; /* Sembunyikan teks saat loading */
+    opacity: 0;
+}
+.btn-primary.loading .btn-spinner-ksi {
+    display: block;
+}
+@keyframes spin-ksi {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* KODE BARU: Gaya untuk modal sukses */
+.modal-container-ksi {
+    position: fixed;
+    z-index: 2001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-overlay-bg);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInModalStatus 0.3s;
+}
+.modal-content-ksi {
+    background-color: var(--bg-content);
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px var(--shadow-color);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    animation: slideInModalStatus 0.4s;
+}
+.modal-icon-ksi {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+.modal-icon-ksi.success {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+}
+.modal-content-ksi h3 {
+    margin: 0 0 10px 0;
+    color: var(--text-primary);
+}
+.modal-content-ksi p {
+    margin-bottom: 24px;
+    color: var(--text-secondary);
+    word-wrap: break-word;
+}
+.modal-content-ksi .btn-primary {
+    width: 100%;
+}
+
+@media (max-width: 992px) {
+    .form-grid-ksi {
+        grid-template-columns: 1fr;
+    }
+    .form-actions-ksi {
+        grid-column: 1;
+    }
+}

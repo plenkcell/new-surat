@@ -1,0 +1,17 @@
+/* Berisi gaya dasar untuk seluruh halaman */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: 'Poppins', sans-serif; 
+    background-color: var(--bg-main); 
+    color: var(--text-primary); 
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.dashboard-container { 
+    display: flex; 
+}

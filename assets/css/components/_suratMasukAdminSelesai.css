@@ -1,0 +1,67 @@
+/* File: assets/css/components/_suratMasukAdminSelesai.css */
+
+/* --- Kontrol --- */
+#smas-controls-wrapper {
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;
+    gap:16px; padding:8px; margin-bottom:16px;
+  }
+  .controls-left-suratMasukAdmin { display:flex; align-items:center; gap:15px; flex-wrap:wrap; }
+  .entries-control-suratMasukAdmin,
+  .filter-control-suratMasukAdmin { display:flex; align-items:center; gap:8px; font-size:.95rem; color:var(--text-secondary,#667085); }
+  #smas-entries-select, #smas-filter-disposisi {
+    padding:10px 14px; border-radius:8px; border:1px solid var(--border-color,#e5e7eb);
+    background:var(--bg-main,#fff); color:var(--text-primary,#111827); cursor:pointer; min-width:85px;
+  }
+  .search-wrapper-suratMasukAdmin { position:relative; flex-grow:1; max-width:400px; }
+  .search-wrapper-suratMasukAdmin i {
+    position:absolute; left:18px; top:50%; transform:translateY(-50%); color:var(--text-secondary,#667085);
+  }
+  #smas-search-input {
+    width:100%; padding:12px 20px 12px 45px; border-radius:25px; border:1px solid var(--border-color,#e5e7eb);
+    background:var(--bg-main,#fff); color:var(--text-primary,#111827); font-size:1.04em;
+  }
+  
+  /* --- Tabel --- */
+  #smas-data-table { width:100%; border-collapse:separate; border-spacing:0 8px; }
+  #smas-data-table thead th { text-align:left; font-weight:700; color:var(--text-secondary,#667085); padding:10px 14px; }
+  #smas-data-table td {
+    background:var(--bg-content,#fff); padding:14px; border-top:1px solid var(--border-color,#e5e7eb); border-bottom:1px solid var(--border-color,#e5e7eb);
+  }
+  #smas-data-table tr td:first-child { border-left:1px solid var(--border-color,#e5e7eb); border-radius:10px 0 0 10px; }
+  #smas-data-table tr td:last-child  { border-right:1px solid var(--border-color,#e5e7eb); border-radius:0 10px 10px 0; }
+  .title-sma { display:block; font-weight:700; color:var(--text-primary,#111827); font-size:1rem; }
+  .text-secondary-sma { display:block; font-size:.9rem; color:var(--text-secondary,#667085); }
+  .btn-link-sma { background:none; border:none; color:var(--primary-color,#2563eb); cursor:pointer; padding:0; font-size:.89rem; display:inline-flex; align-items:center; gap:4px; }
+  
+  /* --- Chip Status --- */
+  .status-chip-sma { display:inline-block; padding:6px 10px; border-radius:999px; font-weight:700; font-size:.82rem; }
+  .status-chip-sma.success { background:rgba(16,113,70,.12); color:#107146; border:1px solid rgba(16,113,70,.35); }
+  .status-chip-sma.warning { background:rgba(255,193,7,.12); color:#a66a00; border:1px solid rgba(255,193,7,.35); }
+  
+  /* --- Tombol Aksi --- */
+  .btn-smas {
+    padding:6px 12px; border-radius:6px; font-size:.85rem; font-weight:600; color:#fff; border:none; cursor:pointer;
+    display:inline-flex; align-items:center; gap:5px; margin-bottom:5px; width:110px; justify-content:center; transition:background-color .2s ease;
+  }
+  .btn-reactivate-smas { background:#107146; }
+  .btn-reactivate-smas:hover { background:#0a8f4c; }
+  .btn-delete-smas { background:#cf3b3b; }
+  .btn-delete-smas:hover { background:#d95757; }
+  
+  /* --- Pagination --- */
+  #smas-pagination-buttons { display:flex; gap:6px; align-items:center; }
+  #smas-pagination-buttons .btn-pagination {
+    padding:6px 10px; border-radius:6px; border:1px solid var(--border-color,#e5e7eb); background:var(--bg-main,#fff);
+    color:var(--text-primary,#111827); cursor:pointer;
+  }
+  #smas-pagination-buttons .btn-pagination.active { background:var(--primary-color,#2563eb); border-color:var(--primary-color,#2563eb); color:#fff; }
+  #smas-pagination-buttons .btn-pagination[disabled] { opacity:.5; cursor:not-allowed; }
+  #smas-pagination-buttons .ellipsis { padding:0 6px; color:var(--text-secondary,#667085); }
+  
+  /* --- Skeleton --- */
+  .skeleton-box {
+    display:block; height:14px; background:linear-gradient(90deg, rgba(0,0,0,0.08) 25%, rgba(0,0,0,0.12) 37%, rgba(0,0,0,0.08) 63%);
+    border-radius:6px; animation:skeleton-loading 1.2s ease-in-out infinite; margin:6px 0;
+  }
+  @keyframes skeleton-loading { 0% { background-position:0 0; } 100% { background-position:200% 0; } }
+  

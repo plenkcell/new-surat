@@ -1,0 +1,322 @@
+/* File: assets/css/components/_agenda.css (Versi Final & Lengkap) */
+
+.agenda-container {
+    height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-content);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    flex-grow: 1; /* Ini kunci agar kalender mengisi sisa tinggi section */
+    min-height: 750px; /* Tinggi minimal untuk mencegah kalender terlalu pendek */
+}
+#calendar-container .fc { 
+    font-family: 'Poppins', sans-serif; 
+    height: 100%; 
+}
+#calendar-container .fc-toolbar-title { 
+    font-size: 1.6rem; 
+    font-weight: 600; 
+    color: var(--text-primary); 
+}
+#calendar-container .fc-button,
+#calendar-container .fc-button:focus,
+#calendar-container .fc-button:active {
+    background-color: var(--bg-content) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-secondary) !important;
+    box-shadow: none !important;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+#calendar-container .fc-button:hover { 
+    background-color: var(--bg-main) !important; 
+    color: var(--text-primary) !important; 
+}
+#calendar-container .fc-button-primary:not(:disabled).fc-button-active,
+#calendar-container .fc-button-primary:not(:disabled):active {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: rgb(170, 34, 34) !important;
+}
+#calendar-container .fc-daygrid-day.fc-day-today { 
+    background-color: rgba(var(--primary-rgb), 0.1); 
+}
+#calendar-container .fc-day-header,
+#calendar-container .fc-daygrid-day { 
+    border-color: var(--border-color); 
+}
+#calendar-container .fc-day-header { 
+    color: var(--text-secondary); 
+    font-weight: 600; 
+}
+#calendar-container .fc-daygrid-event {
+    padding: 3px 8px;
+    cursor: pointer;
+    margin: 2px 4px !important;
+    border: none;
+    color: rgb(78, 214, 45) !important;
+    overflow: hidden;
+    font-size: 0.8rem;
+}
+
+/* ### PERBAIKAN 1: Tooltip Event untuk Mode Terang & Gelap ### */
+.fc-event-tooltip {
+    position: absolute;
+    z-index: 10001;
+    background-color: var(--bg-content); /* Default untuk mode terang */
+    color: var(--text-secondary); /* Default untuk mode terang */
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(221, 218, 218, 0.1);
+    font-size: 0.9rem;
+    max-width: 350px;
+    pointer-events: none;
+    display: none;
+}
+body.dark-mode .fc-event-tooltip {
+    background-color: var(--bg-sidebar);
+    color: var(--text-primary-inverted);
+    border-color: transparent;
+}
+.fc-event-tooltip strong { 
+    font-size: 1rem; 
+    display: block; 
+    margin-bottom: 8px; 
+    color: var(--text-primary);
+}
+body.dark-mode .fc-event-tooltip strong {
+    color: rgb(88, 85, 85);
+}
+.fc-event-tooltip p { 
+    margin: 5px 0 0 0; 
+    opacity: 0.9; 
+    display: flex; 
+    align-items: center; 
+}
+.fc-event-tooltip i { 
+    margin-right: 8px; 
+    color: var(--primary-color); 
+    font-size: 1.1rem; 
+}
+
+/* ### PERBAIKAN 2 & 3: Layout Modal dan Tombol ### */
+#agenda-modal {
+    display: none;
+    align-items: flex-start;
+    justify-content: flex-end;
+    overflow: hidden;
+    background-color: transparent;
+    backdrop-filter: none;
+    transition: background-color 0.4s ease;
+}
+#agenda-modal.active {
+    display: flex;
+    pointer-events: auto;
+    background-color: var(--modal-overlay-bg);
+    backdrop-filter: blur(5px);
+}
+.modal-content-agenda {
+    background-color: var(--bg-content);
+    height: 100%;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 0;
+    box-shadow: -10px 0px 40px rgba(0,0,0,0.1);
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    flex-direction: column;
+}
+#agenda-modal.active .modal-content-agenda {
+    transform: translateX(0);
+}
+.modal-header-agenda {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+.modal-header-agenda h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+}
+.modal-body-agenda {
+    padding: 24px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+.form-group-agenda {
+    margin-bottom: 20px;
+}
+.form-group-agenda label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+.form-input-agenda {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    border-radius: 8px;
+}
+/* Gaya untuk input[type="date"] agar ikonnya terlihat */
+input[type="date"] {
+    position: relative;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    opacity: 0.6;
+}
+/* ### PERBAIKAN: Tampilan Jam dengan WIB ### */
+.time-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.time-input-wrapper .form-input-agenda {
+    padding-right: 60px; /* Beri ruang untuk label WIB */
+}
+.time-input-wrapper::after {
+    content: 'WIB';
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    pointer-events: none;
+}
+.form-row-agenda {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+.agenda-form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+}
+.agenda-form-actions .btn-primary {
+    flex-grow: 1;
+}
+/* Gaya dasar untuk tombol baru di modal agenda */
+.btn-danger-agd, .btn-secondary-agd {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Gaya Tombol Hapus (Merah) */
+.btn-danger-agd {
+    background-color: #FEEBC8; /* Warna background dari tema Anda */
+    color: #DD6B20; /* Warna teks dari tema Anda */
+    border: 1px solid #FBD38D;
+}
+.btn-danger-agd:hover {
+    background-color: #FBD38D;
+    color: #B75C16;
+}
+
+/* Gaya Tombol Batal (Sekunder/Abu-abu) */
+.btn-secondary-agd {
+    background-color: var(--bg-main);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+.btn-secondary-agd:hover {
+    background-color: var(--border-color);
+    color: var(--text-primary);
+}
+/* ### KODE BARU: Gaya untuk tampilan tanggal format Indonesia ### */
+.date-display-agenda {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    min-height: 48px; /* Samakan tinggi dengan input lain */
+    display: flex;
+    align-items: center;
+}
+.date-display-agenda::after {
+    content: '\ec82'; /* Kode ikon kalender dari boxicons */
+    font-family: 'boxicons' !important;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+/* ### PERBAIKAN TOTAL UNTUK RESPONSIVE ### */
+@media (max-width: 768px) {
+    /* Tampilan Modal FIT di Smartphone */
+    #agenda-modal {
+        justify-content: center;
+        align-items: center;
+    }
+    .modal-content-agenda {
+        height: auto;
+        max-height: 90vh;
+        width: 95%;
+        border-radius: 12px;
+        transform: scale(0.95) translateY(10px);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    #agenda-modal.active .modal-content-agenda {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+    /* Tatanan Form di Smartphone */
+    .form-row-agenda {
+        grid-template-columns: 1fr;
+    }
+    /* Tatanan Kalender di Smartphone */
+    .agenda-container {
+        padding: 15px;
+        height: auto;
+        min-height: calc(100vh - 100px);
+    }
+    #calendar-container .fc-header-toolbar {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 20px !important;
+    }
+    #calendar-container .fc-toolbar-chunk {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    #calendar-container .fc-toolbar-title {
+        font-size: 1.3rem;
+        order: 1;
+    }
+     #calendar-container .fc-toolbar-chunk:first-child {
+        order: 2;
+    }
+    #calendar-container .fc-toolbar-chunk:last-child {
+        order: 3;
+    }
+}

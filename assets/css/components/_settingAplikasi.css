@@ -1,0 +1,177 @@
+/* File: assets/css/components/_settingAplikasi.css */
+/* Gaya khusus untuk halaman Setting Aplikasi */
+
+.setting-wrapper {
+    padding: 16px;
+}
+
+.form-grid-setting {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+.setting-card {
+    background-color: var(--bg-main);
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.form-group-setting {
+    margin-bottom: 20px;
+}
+
+.form-group-setting label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.form-input-setting {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--bg-content);
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+}
+
+.form-input-setting:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.15);
+}
+
+textarea.form-input-setting {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Pratinjau Logo */
+.logo-preview-container {
+    width: 100%;
+    padding: 16px;
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-content);
+}
+
+.logo-preview {
+    max-width: 100%;
+    max-height: 150px;
+    object-fit: contain;
+}
+
+/* Input File */
+.input-file-setting {
+    width: 100%;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+.input-file-setting::file-selector-button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    cursor: pointer;
+    margin-right: 16px;
+    transition: background-color 0.2s;
+}
+.input-file-setting::file-selector-button:hover {
+    background-color: var(--border-color);
+}
+
+.input-hint-setting {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 8px;
+}
+
+/* Tombol Aksi */
+.setting-actions {
+    grid-column: 1 / -1; /* Tombol membentang penuh di bawah */
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+
+.btn-primary-setting {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    transition: background-color 0.2s;
+}
+.btn-primary-setting:hover {
+    background-color: var(--primary-dark);
+}
+.btn-primary-setting:disabled {
+    background-color: var(--text-secondary);
+    cursor: not-allowed;
+}
+
+/* Skeleton Loader */
+#setting-skeleton-loader {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+.setting-card-skeleton {
+    padding: 24px;
+}
+.skeleton-line {
+    height: 16px;
+    width: 80%;
+    background-color: var(--border-color);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+.skeleton-line.title {
+    height: 20px;
+    width: 40%;
+    margin-bottom: 30px;
+}
+.skeleton-line.text {
+    height: 60px;
+    width: 100%;
+}
+.skeleton-line.short {
+    width: 60%;
+}
+.skeleton-image {
+    width: 100%;
+    height: 184px;
+    background-color: var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 30px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+@keyframes pulse {
+    0% { background-color: var(--border-color); }
+    50% { background-color: var(--bg-main); }
+    100% { background-color: var(--border-color); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-grid-setting, #setting-skeleton-loader {
+        grid-template-columns: 1fr;
+    }
+}

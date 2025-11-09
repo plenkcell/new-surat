@@ -1,0 +1,143 @@
+/* Semua gaya untuk header dan kontrol pengguna */
+.main-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 24px; 
+}
+.header-left { 
+    display: flex; 
+    align-items: center; 
+    gap: 16px; 
+}
+.header-greeting p { 
+    color: var(--text-secondary); 
+}
+.header-greeting h1 { 
+    font-size: 14px; 
+    font-weight: 700; 
+}
+.header-user { 
+    display: flex; 
+    align-items: center; 
+    gap: 16px; 
+}
+.user-profile { 
+    position: relative; 
+}
+.user-avatar { 
+    width: 48px; 
+    height: 48px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    cursor: pointer; 
+    border: 2px solid var(--primary-color); 
+}
+.theme-switcher { 
+    width: 44px; 
+    height: 44px; 
+    background-color: var(--primary-light); 
+    border-radius: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    position: relative; 
+    overflow: hidden; 
+}
+.theme-switcher:hover { 
+    background-color: var(--primary-color); 
+    color: white; 
+}
+.theme-switcher i { 
+    font-size: 24px; 
+    transition: transform 0.4s ease, opacity 0.4s; 
+    position: absolute; 
+}
+.sun-icon { 
+    transform: translateY(0); 
+    opacity: 1; 
+}
+.moon-icon { 
+    transform: translateY(30px); 
+    opacity: 0; 
+}
+body.dark-mode .sun-icon { 
+    transform: translateY(-30px); 
+    opacity: 0; 
+}
+body.dark-mode .moon-icon { 
+    transform: translateY(0); 
+    opacity: 1; 
+}
+.dropdown-menu { 
+    position: absolute; 
+    top: calc(100% + 12px); 
+    right: 0; 
+    width: 240px; 
+    background-color: var(--bg-content); 
+    backdrop-filter: blur(10px); 
+    border-radius: 12px; 
+    box-shadow: 0 10px 30px var(--shadow-color); 
+    border: 1px solid var(--border-color); 
+    z-index: 100; 
+    opacity: 0; 
+    visibility: hidden; 
+    transform: translateY(-10px) scale(0.95); 
+    transition: all 0.2s ease; 
+    padding: 8px; 
+}
+.dropdown-menu.show { 
+    opacity: 1; 
+    visibility: visible; 
+    transform: translateY(0) scale(1); 
+}
+.dropdown-header { 
+    padding: 12px 16px; 
+    border-bottom: 1px solid var(--border-color); 
+    margin-bottom: 8px; 
+}
+.dropdown-header .user-name { 
+    font-size: 1rem; 
+    font-weight: 600; 
+    color: var(--text-primary); 
+    margin: 0; 
+}
+.dropdown-header .user-level { 
+    font-size: 0.85rem; 
+    color: var(--text-secondary); 
+    margin: 0; 
+}
+.dropdown-menu ul { 
+    list-style: none; 
+}
+.dropdown-menu a { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    padding: 12px 16px; 
+    text-decoration: none; 
+    color: var(--text-secondary); 
+    font-size: 0.9rem; 
+    font-weight: 500; 
+    border-radius: 8px; 
+    transition: all 0.2s ease; 
+}
+.dropdown-menu a:hover { 
+    background-color: var(--primary-light); 
+    color: var(--primary-dark); 
+}
+.dropdown-menu .divider { 
+    height: 1px; 
+    background-color: var(--border-color); 
+    margin: 8px 0; 
+}
+.dropdown-menu a[href="logout.php"]:hover { 
+    background-color: var(--error-bg); 
+    color: var(--error-text); 
+}
+body.dark-mode .dropdown-menu a[href="logout.php"]:hover { 
+    background-color: var(--error-bg); 
+    color: var(--error-text); 
+}

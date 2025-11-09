@@ -1,0 +1,26 @@
+/* Berisi semua variabel warna, ukuran, dan tema */
+:root {
+    /* Light Mode */
+    --primary-color: #009688; --primary-light: #E0F2F1; --primary-dark: #00796B;
+    --bg-main: #F4F7FC; --bg-content: #FFFFFF; --bg-sidebar: #FFFFFF;
+    --text-primary: #1A202C; --text-secondary: #718096; --border-color: #E8E8E8;
+    --shadow-color: rgba(149, 157, 165, 0.1);
+    --error-bg: #FFEBEE; --error-text: #C62828;
+    --success-bg: #E8F5E9; --success-text: #2E7D32;
+    --primary-rgb: 0, 150, 136;
+    --nav-border-color: rgba(0, 0, 0, 0.1);
+    --sidebar-width: 260px; --sidebar-width-collapsed: 88px;
+    --modal-overlay-bg: rgba(244, 247, 252, 0.6);
+}
+body.dark-mode {
+    /* Dark Mode */
+    --primary-color: #48C9B0; --primary-light: rgba(72, 201, 176, 0.1); --primary-dark: #48C9B0;
+    --bg-main: #171923; --bg-content: #2D3748; --bg-sidebar: #1A202C;
+    --text-primary: #EDF2F7; --text-secondary: #A0AEC0; --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --error-bg: #4D1C1F; --error-text: #EF9A9A;
+    --success-bg: #1C3A1E; --success-text: #A5D6A7;
+    --primary-rgb: 72, 201, 176;
+    --nav-border-color: rgba(255, 255, 255, 0.15);
+    --modal-overlay-bg: rgba(23, 25, 35, 0.6);
+}

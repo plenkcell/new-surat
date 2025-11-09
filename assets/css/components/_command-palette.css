@@ -1,0 +1,120 @@
+/* Semua gaya untuk Command Palette */
+.command-palette-container {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-overlay-bg);
+    backdrop-filter: blur(5px);
+    animation: fadeInModalStatus 0.2s;
+    padding-top: 15vh;
+}
+.command-palette-modal {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.7);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    overflow: hidden;
+    animation: slideInModalStatus 0.3s;
+}
+body.dark-mode .command-palette-modal {
+    background-color: rgba(45, 55, 72, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.command-palette-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+.command-palette-header i {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-right: 12px;
+}
+#command-palette-input {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+#command-palette-input::placeholder {
+    color: var(--text-secondary);
+}
+.command-palette-shortcut {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.command-palette-results {
+    list-style: none;
+    margin: 0;
+    padding: 8px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+.command-palette-results li {
+    padding: 12px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.command-palette-results li.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+.command-palette-results li.active .cp-item-desc {
+    color: rgba(255, 255, 255, 0.8);
+}
+.command-palette-results li:not(.active):hover {
+    background-color: var(--primary-light);
+}
+.cp-item-icon {
+    font-size: 1.2rem;
+    width: 20px;
+    text-align: center;
+}
+.cp-item-info {
+    flex-grow: 1;
+}
+.cp-item-name {
+    font-weight: 500;
+}
+.cp-item-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+.command-palette-footer {
+    padding: 8px 16px;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--primary-light);
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    display: flex;
+    gap: 16px;
+}
+body.dark-mode .command-palette-footer {
+    background-color: rgba(0,0,0,0.2);
+}
+.command-palette-footer kbd {
+    background-color: var(--bg-content);
+    padding: 2px 6px;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px var(--shadow-color);
+}

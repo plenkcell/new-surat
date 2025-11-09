@@ -1,0 +1,186 @@
+/* File: assets/css/components/_surat_masuk.css */
+
+/* Pengaturan umum untuk wrapper tabel */
+.table-wrapper-sms {
+    background-color: var(--bg-main); /* Latar belakang disamakan dengan body */
+    border-radius: 12px;
+    padding: 0; /* Padding dihilangkan dari wrapper */
+    box-shadow: none; /* Shadow dihilangkan dari wrapper */
+}
+
+/* Kontrol Search dan Entries */
+.table-controls-sms {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 16px;
+    background-color: var(--bg-content);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+/* ### KODE BARU: Wrapper untuk kontrol kiri ### */
+.controls-left-sms {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+/* Tampilan modern untuk search bar */
+.search-wrapper-sms {
+    flex-grow: 1;
+    position: relative;
+    max-width: 450px;
+}
+.search-wrapper-sms i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+.search-input-sms {
+    width: 100%;
+    padding: 14px 20px 14px 50px;
+    border-radius: 12px;
+    border: none;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+.search-input-sms:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.2);
+}
+
+.entries-control-sms { /* Gaya yang sama dengan search */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-secondary);
+}
+.entries-select-sms {
+    padding: 14px 20px;
+    border-radius: 12px;
+    border: none;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    cursor: pointer;
+}
+.btn-reset-dsi { /* Tombol reset disamakan gayanya */
+    background-color: var(--bg-main);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    padding: 14px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    line-height: 1;
+}
+.btn-reset-dsi:hover {
+    background-color: var(--border-color);
+    color: var(--text-primary);
+}
+/* Desain Tabel Collapse */
+/* ### DESAIN KARTU BARU UNTUK SETIAP SURAT ### */
+.sms-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Jarak antar kartu */
+}
+
+.sms-card {
+    background-color: var(--bg-content);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid var(--border-color);
+}
+.sms-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(var(--primary-rgb), 0.2);
+}
+
+/* Bagian utama kartu yang selalu terlihat */
+.sms-card__header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    gap: 15px;
+}
+.sms-card__icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    background-color: var(--primary-light);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.sms-card__main-info {
+    flex-grow: 1;
+}
+.sms-card__perihal {
+    font-weight: 600; /* Tetap BOLD */
+    font-size: 1rem;   /* PERBAIKAN: Ukuran font disamakan */
+    color: var(--text-primary);
+    margin: 0;
+}
+.sms-card__meta {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.sms-card__toggle-icon {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    transition: transform 0.3s ease;
+}
+.sms-card.is-open .sms-card__toggle-icon {
+    transform: rotate(180deg);
+}
+
+/* Bagian detail kartu yang bisa di-collapse */
+.sms-card__details {
+    display: none; /* Sembunyi secara default */
+    border-top: 1px solid var(--border-color);
+    padding: 20px;
+    background-color: var(--bg-main);
+}
+.sms-card.is-open .sms-card__details {
+    display: block; /* Tampil jika kartu terbuka */
+}
+
+.detail-grid-sms {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.detail-item-sms h5 {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+.detail-item-sms p, .detail-item-sms .btn-dsi {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+.disposisi-list-sms span {
+    display: inline-block;
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    padding: 4px 10px;
+    border-radius: 15px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 0.85rem;
+}
